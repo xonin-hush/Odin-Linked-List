@@ -50,20 +50,26 @@ class LinkedList {
     }
   }
   size() {
-    let temp=this.head
+    let temp = this.head;
     let i = 0;
     if (this.head == null) {
       console.log("Size is 0");
     } else {
-    while (temp != null) {
-      
-      i++
-      temp=temp.next
-      console.log(i)
+      while (temp != null) {
+        i++;
+        temp = temp.next;
+      }
+      console.log("Size is: ",i);
+    }
+  }
+  showHead(){
+    if(this.head==null){
+      console.log("list is empty")
+    }
+    else{
+      console.log("Head is: ",this.head.value)
     }
 
-    }
-    // let temp=""
   }
 }
 
@@ -73,6 +79,7 @@ L.prepend(99);
 L.prepend(33);
 L.prepend(22);
 L.prepend(84);
-L.prepend(33)
-L.size()
+L.prepend(33);
+L.size();
+L.showHead()
 // L.printAll();
