@@ -60,6 +60,7 @@ class LinkedList {
         temp = temp.next;
       }
       console.log("Size is: ", i);
+      return i;
     }
   }
   showHead() {
@@ -80,6 +81,28 @@ class LinkedList {
       console.log("Tail is :", temp.value);
     }
   }
+  at(index) {
+    let temp = this.head;
+    if (index <= this.size()) {
+      if (this.head == null) {
+        console.log("list is empty");
+      } else {
+        if (index == 0) {
+          console.log(this.head.value);
+        } else {
+          let i = 0;
+
+          while (i != index) {
+            temp = temp.next;
+            i++;
+          }
+          console.log(temp.value);
+        }
+      }
+    } else {
+      console.log("there is no such index (List is smaller than that)");
+    }
+  }
 }
 
 L = new LinkedList();
@@ -92,4 +115,5 @@ L.prepend(33);
 L.size();
 L.showHead();
 L.showTail();
+L.at(10);
 // L.printAll();
