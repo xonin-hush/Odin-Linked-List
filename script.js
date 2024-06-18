@@ -1,3 +1,4 @@
+const { captureRejectionSymbol } = require("events");
 const { stat } = require("fs");
 
 class Node {
@@ -187,6 +188,41 @@ class LinkedList {
       }
     }
   }
+
+  find(data) {
+    let status = "";
+    let index = 0;
+    let temp = this.head;
+    if (this.head == null) {
+      console.log("null");
+      status = "null";
+    } else {
+      if (this.head.value == data) {
+        console.log("0");
+        status = "yes";
+      } else {
+        while (temp.next != null) {
+          if (temp.value == data) {
+            console.log(index);
+            status = "yes";
+            return;
+          }
+          if (temp.value != data) {
+            temp = temp.next;
+            index++;
+          }
+        }
+        if (temp.value == data) {
+          console.log(index);
+          status = "yes";
+        } else {
+          if (status != "yes") {
+            console.log("null");
+          }
+        }
+      }
+    }
+  }
 }
 L = new LinkedList();
 // L.prepend(8);
@@ -202,6 +238,8 @@ L = new LinkedList();
 // L.pop();
 L.append(339);
 L.append(123);
-L.append(2942);
-L.contains(339);
+// L.append(2942);
+// L.append(199);
+// L.contains(339);
+L.find(123);
 L.printAll();
