@@ -126,18 +126,48 @@ class LinkedList {
       }
     }
   }
+  append(data) {
+    let temp1 = this.head;
+    let temp2 = "";
+    let newNode = new Node(data);
+    if (this.head == null) {
+      this.head = newNode;
+      console.log(this.head);
+      console.log("NewNode Added");
+    } else {
+      if (this.head.next == null) {
+        this.head.next = newNode;
+        console.log("NewNode added");
+      } else {
+        while (temp1.next != null) {
+          if (temp1.next != null) {
+            temp2 = temp1;
+            temp1 = temp1.next;
+          }
+          if (temp1.next == null) {
+            temp2.next.next = newNode;
+            console.log("NewNode added to end of list");
+            break;
+          }
+        }
+      }
+    }
+  }
 }
 
 L = new LinkedList();
-L.prepend(8);
-L.prepend(99);
-L.prepend(33);
-L.prepend(22);
-L.prepend(84);
-L.prepend(33);
+// L.prepend(8);
+// L.prepend(99);
+// L.prepend(33);
+// L.prepend(22);
+// L.prepend(84);
+// L.prepend(33);
 // L.size();
 // L.showHead();
 // L.showTail();
 // L.at(10);
-L.pop();
+// L.pop();
+L.append(339);
+L.append(123);
+L.append(2942);
 L.printAll();
