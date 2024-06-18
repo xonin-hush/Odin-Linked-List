@@ -1,6 +1,6 @@
 # Linked-List
 
-Seventh project in "the odin project" JavaScript Course, it demonstrates recursion. [The Odin Project-JavaScript](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript).
+Seventh project in "the odin project" JavaScript Course, it demonstrates Linked-List data structure. [The Odin Project-JavaScript](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript).
 
 ## Things I got a better understanding of
 
