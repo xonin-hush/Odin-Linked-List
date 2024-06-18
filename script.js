@@ -1,3 +1,5 @@
+const { stat } = require("fs");
+
 class Node {
   constructor(value, next) {
     this.value = value;
@@ -153,8 +155,39 @@ class LinkedList {
       }
     }
   }
+  contains(data) {
+    let status = "";
+    let temp = this.head;
+    if (this.head == null) {
+      console.log("False");
+    } else {
+      if (temp.value == data) {
+        console.log("True");
+        status = "true";
+        return;
+      } else {
+        while (temp.next != null) {
+          if (temp.value == data) {
+            console.log("True");
+            status = "true";
+            break;
+          } else {
+            temp = temp.next;
+            console.log(temp.next);
+          }
+        }
+        if (temp.value == data && status != "true") {
+          status = "true";
+          console.log("true");
+        } else {
+          if (status != "true") {
+            console.log("False");
+          }
+        }
+      }
+    }
+  }
 }
-
 L = new LinkedList();
 // L.prepend(8);
 // L.prepend(99);
@@ -170,4 +203,5 @@ L = new LinkedList();
 L.append(339);
 L.append(123);
 L.append(2942);
+L.contains(339);
 L.printAll();
