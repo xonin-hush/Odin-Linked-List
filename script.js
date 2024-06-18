@@ -103,6 +103,29 @@ class LinkedList {
       console.log("there is no such index (List is smaller than that)");
     }
   }
+  pop() {
+    let temp1 = this.head;
+    let temp2 = "";
+    if (this.head == null) {
+      console.log("list is empty");
+    } else {
+      if (this.head.next == null) {
+        this.head = null;
+        console.log("head removed");
+      } else {
+        while (temp1.next != null) {
+          if (temp1.next != null) {
+            temp2 = temp1;
+            temp1 = temp1.next;
+          }
+          if (temp1.next == null) {
+            temp2.next = null;
+            console.log("Last node has been removed");
+          }
+        }
+      }
+    }
+  }
 }
 
 L = new LinkedList();
@@ -112,8 +135,9 @@ L.prepend(33);
 L.prepend(22);
 L.prepend(84);
 L.prepend(33);
-L.size();
-L.showHead();
-L.showTail();
-L.at(10);
-// L.printAll();
+// L.size();
+// L.showHead();
+// L.showTail();
+// L.at(10);
+L.pop();
+L.printAll();
